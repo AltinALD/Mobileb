@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - МобилМаркет</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Test-specific styles */
+        .test-notice {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .test-notice h3 {
+            color: #d97706;
+            margin: 0 0 10px 0;
+        }
+        .test-notice p {
+            margin: 5px 0;
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-notice">
+        <h3>🧪 Test Mode</h3>
+        <p>This is a test version of the e-commerce landing page.</p>
+        <p>Images will show as broken links until you add actual product photos.</p>
+        <p>All functionality should work correctly!</p>
+    </div>
+
+    <!-- Include the main content -->
+    <script>
+        // Load the main HTML content
+        fetch('index.html')
+            .then(response => response.text())
+            .then(html => {
+                // Extract the body content
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const bodyContent = doc.body.innerHTML;
+                
+                // Insert after the test notice
+                document.body.innerHTML += bodyContent;
+                
+                // Load the main JavaScript
+                const script = document.createElement('script');
+                script.src = 'main.js';
+                document.head.appendChild(script);
+                
+                // Load external libraries
+                const libraries = [
+                    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js',
+                    'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js',
+                    'https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js',
+                    'https://cdn.jsdelivr.net/npm/sweetalert2@11'
+                ];
+                
+                libraries.forEach(lib => {
+                    const script = document.createElement('script');
+                    script.src = lib;
+                    document.head.appendChild(script);
+                });
+                
+                // Load CSS libraries
+                const cssLibraries = [
+                    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+                    'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css',
+                    'https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css',
+                    'https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css'
+                ];
+                
+                cssLibraries.forEach(css => {
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = css;
+                    document.head.appendChild(link);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading main content:', error);
+                document.body.innerHTML += '<p style="color: red; text-align: center; padding: 20px;">Error loading content. Please check if index.html exists.</p>';
+            });
+    </script>
+</body>
+</html> 

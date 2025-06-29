@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-mk="Мобилни Телефони - Најдобри Цени" data-lang-sq="Telefona Celularë - Çmimet Më të Mira">Мобилни Телефони - Најдобри Цени</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: #111111;
+            color: #f3f4f6;
+        }
+        .header, .footer {
+            background: #18181b;
+            color: #f3f4f6;
+            box-shadow: none;
+        }
+        .logo, .footer-bottom p {
+            color: #38bdf8;
+        }
+        .container {
+            background: none;
+        }
+        .hero {
+            background: linear-gradient(135deg, #18181b 0%, #23272f 100%);
+            color: #f3f4f6;
+        }
+        .section-title {
+            color: #38bdf8;
+        }
+        .product-card {
+            background: #18181b;
+            color: #f3f4f6;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .product-info h3 {
+            color: #f3f4f6;
+        }
+        .features li {
+            color: #a1a1aa;
+            border-bottom: 1px solid #23272f;
+        }
+        .features li:last-child {
+            border-bottom: none;
+        }
+        .price .amount {
+            color: #38bdf8;
+        }
+        .order-btn, .submit-btn, .cta-btn {
+            background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(56,189,248,0.3);
+        }
+        .order-btn:hover, .submit-btn:hover, .cta-btn:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+            color: #fff;
+        }
+        .modal-content {
+            background: #18181b;
+            color: #f3f4f6;
+        }
+        .product-summary {
+            background: #23272f;
+        }
+        .form-group input {
+            background: #23272f;
+            color: #f3f4f6;
+            border: 2px solid #23272f;
+        }
+        .form-group input:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56,189,248,0.1);
+        }
+        .lang-btn {
+            background: #23272f;
+            color: #f3f4f6;
+            border: 2px solid #23272f;
+        }
+        .lang-btn.active {
+            background: #38bdf8;
+            color: #fff;
+            border-color: #38bdf8;
+        }
+        .lang-btn:hover {
+            border-color: #38bdf8;
+        }
+        /* Lightbox overlay for dark mode */
+        #simpleLightbox {
+            background: rgba(0,0,0,0.95) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span data-lang-mk="МобилМаркет" data-lang-sq="MobilMarket">МобилМаркет</span>
+                </div>
+                <div class="language-toggle">
+                    <button class="lang-btn active" data-lang="mk">
+                        <img src="https://flagcdn.com/w20/mk.png" alt="Macedonian">
+                        <span>МК</span>
+                    </button>
+                    <button class="lang-btn" data-lang="sq">
+                        <img src="https://flagcdn.com/w20/al.png" alt="Albanian">
+                        <span>SQ</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-lang-mk="Најдобрите Смартфони" data-lang-sq="Telefonat Më të Mirë">Најдобрите Смартфони</h1>
+                <p data-lang-mk="Откријте ги најновите модели на iPhone и Samsung со најдобри цени" data-lang-sq="Zbuloni modelet më të reja të iPhone dhe Samsung me çmimet më të mira">Откријте ги најновите модели на iPhone и Samsung со најдобри цени</p>
+                <a href="#products" class="cta-btn" data-lang-mk="Прегледај Продукти" data-lang-sq="Shiko Produktet">Прегледај Продукти</a>
+            </div>
+        </div>
+    </section>
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title" data-lang-mk="Нашите Продукти" data-lang-sq="Produktet Tona">Нашите Продукти</h2>
+            <!-- iPhone 16 Pro Max -->
+            <div class="product-card">
+                <div class="product-images">
+                    <div class="image-gallery">
+                        <a href="Images/i1.jpg" class="main-image">
+                            <img src="Images/i1.jpg" alt="iPhone 16 Pro Max" loading="lazy">
+                        </a>
+                        <div class="thumbnail-images">
+                            <a href="Images/i2.jpg">
+                                <img src="Images/i2.jpg" alt="iPhone 16 Pro Max" loading="lazy">
+                            </a>
+                            <a href="Images/i3.jpg">
+                                <img src="Images/i3.jpg" alt="iPhone 16 Pro Max" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>iPhone 16 Pro Max</h3>
+                    <div class="price">
+                        <span class="currency">€</span>
+                        <span class="amount">198</span>
+                    </div>
+                    <ul class="features">
+                        <li data-lang-mk="512GB меморија" data-lang-sq="512GB memorija">512GB меморија</li>
+                        <li data-lang-mk="8GB RAM процесор" data-lang-sq="8GB RAM procesor">8GB RAM процесор</li>
+                        <li data-lang-mk="6.9" екран" data-lang-sq="6.9" ekran">6.9" екран</li>
+                        <li data-lang-mk="Полна пакетна содржина" data-lang-sq="Fullbox paketim">Полна пакетна содржина</li>
+                        <li data-lang-mk="Потекло: Шведска" data-lang-sq="Origjine: Suedi (Malmo)">Потекло: Шведска</li>
+                        <li data-lang-mk="Desert Gold / Black" data-lang-sq="Desert Gold / Black">Desert Gold / Black</li>
+                    </ul>
+                    <button class="order-btn" data-product="iPhone 16 Pro Max" data-price="198">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span data-lang-mk="Нарачај Сега" data-lang-sq="Porosit Tani">Нарачај Сега</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Samsung S25 Ultra 5G -->
+            <div class="product-card">
+                <div class="product-images">
+                    <div class="image-gallery">
+                        <a href="Images/samsung-a-1.png" class="main-image">
+                            <img src="Images/samsung-a-1.png" alt="Samsung S25 Ultra 5G" loading="lazy">
+                        </a>
+                        <div class="thumbnail-images">
+                            <a href="Images/samsung-a-2.png">
+                                <img src="Images/samsung-a-2.png" alt="Samsung S25 Ultra 5G" loading="lazy">
+                            </a>
+                            <a href="Images/samsung-a-3.png">
+                                <img src="Images/samsung-a-3.png" alt="Samsung S25 Ultra 5G" loading="lazy">
+                            </a>
+                            <a href="Images/samsung-a-4.png">
+                                <img src="Images/samsung-a-4.png" alt="Samsung S25 Ultra 5G" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Samsung S25 Ultra 5G</h3>
+                    <div class="price">
+                        <span class="currency">€</span>
+                        <span class="amount">149</span>
+                    </div>
+                    <ul class="features">
+                        <li data-lang-mk="512GB меморија" data-lang-sq="512GB memorija">512GB меморија</li>
+                        <li data-lang-mk="8GB RAM" data-lang-sq="8GB RAM">8GB RAM</li>
+                        <li data-lang-mk="6.8" екран" data-lang-sq="6.8" ekran">6.8" екран</li>
+                        <li data-lang-mk="Pencil во кутија" data-lang-sq="Pencil ne kuti">Pencil во кутија</li>
+                        <li data-lang-mk="Полна пакетна содржина" data-lang-sq="Fullbox paketim">Полна пакетна содржина</li>
+                        <li data-lang-mk="Потекло: Шведска" data-lang-sq="Origjine: Suedi (Malmo)">Потекло: Шведска</li>
+                        <li data-lang-mk="Phantom Black" data-lang-sq="Phantom Black">Phantom Black</li>
+                    </ul>
+                    <button class="order-btn" data-product="Samsung S25 Ultra 5G" data-price="149">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span data-lang-mk="Нарачај Сега" data-lang-sq="Porosit Tani">Нарачај Сега</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Samsung Galaxy A56 5G -->
+            <div class="product-card">
+                <div class="product-images">
+                    <div class="image-gallery">
+                        <a href="Images/samsung-b-1.png" class="main-image">
+                            <img src="Images/samsung-b-1.png" alt="Samsung Galaxy A56 5G" loading="lazy">
+                        </a>
+                        <div class="thumbnail-images">
+                            <a href="Images/samsung-b-2.png">
+                                <img src="Images/samsung-b-2.png" alt="Samsung Galaxy A56 5G" loading="lazy">
+                            </a>
+                            <a href="Images/samsung-b-3.png">
+                                <img src="Images/samsung-b-3.png" alt="Samsung Galaxy A56 5G" loading="lazy">
+                            </a>
+                            <a href="Images/samsung-b-4.png">
+                                <img src="Images/samsung-b-4.png" alt="Samsung Galaxy A56 5G" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Samsung Galaxy A56 5G</h3>
+                    <div class="price">
+                        <span class="currency">€</span>
+                        <span class="amount">99</span>
+                    </div>
+                    <ul class="features">
+                        <li data-lang-mk="256GB меморија" data-lang-sq="256GB memorija">256GB меморија</li>
+                        <li data-lang-mk="6GB RAM" data-lang-sq="6GB RAM">6GB RAM</li>
+                        <li data-lang-mk="6.7" екран" data-lang-sq="6.7" ekran">6.7" екран</li>
+                        <li data-lang-mk="5G технологија" data-lang-sq="5G teknologji">5G технологија</li>
+                        <li data-lang-mk="Полна пакетна содржина" data-lang-sq="Paketim fullbox">Полна пакетна содржина</li>
+                        <li data-lang-mk="Модерен дизајн" data-lang-sq="Pamje moderne dhe dizajn i bukur">Модерен дизајн</li>
+                        <li data-lang-mk="Производство од Шведска" data-lang-sq="Prodhim nga Suedia">Производство од Шведска</li>
+                    </ul>
+                    <button class="order-btn" data-product="Samsung Galaxy A56 5G" data-price="99">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span data-lang-mk="Нарачај Сега" data-lang-sq="Porosit Tani">Нарачај Сега</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 data-lang-mk="Нарачај" data-lang-sq="Porosit">Нарачај</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="product-summary">
+                    <img id="modalProductImage" src="" alt="">
+                    <div>
+                        <h4 id="modalProductName"></h4>
+                        <p class="modal-price">€<span id="modalProductPrice"></span></p>
+                    </div>
+                </div>
+                <form id="orderForm" class="order-form">
+                    <div class="form-group">
+                        <label for="name" data-lang-mk="Име" data-lang-sq="Emri">Име</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-lang-mk="Емаил" data-lang-sq="Email">Емаил</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-lang-mk="Телефон" data-lang-sq="Telefoni">Телефон</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span data-lang-mk="Испрати Нарачка" data-lang-sq="Dërgo Porosinë">Испрати Нарачка</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p data-lang-mk="© 2024 МобилМаркет. Сите права се задржани." data-lang-sq="© 2024 MobilMarket. Të gjitha të drejtat e rezervuara.">© 2024 МобилМаркет. Сите права се задржани.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="main-simple.js"></script>
+</body>
+</html> 
