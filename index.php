@@ -97,7 +97,7 @@
                         <li data-lang-mk="Потекло: Шведска" data-lang-sq="Origjine: Suedi (Malmo)">Потекло: Шведска</li>
                         <li data-lang-mk="Desert Gold / Black" data-lang-sq="Desert Gold / Black">Desert Gold / Black</li>
                     </ul>
-                    <button class="order-btn" data-product="iPhone 16 Pro Max" data-price="198">
+                    <button class="order-btn" data-product="iPhone 16 Pro Max Desert Gold" data-price="198" data-image="Images/i1.jpg">
                         <i class="fas fa-shopping-cart"></i>
                         <span data-lang-mk="Нарачај Сега" data-lang-sq="Porosit Tani">Нарачај Сега</span>
                     </button>
@@ -144,7 +144,7 @@
                         <li data-lang-mk="Потекло: Шведска" data-lang-sq="Origjine: Suedi (Malmo)">Потекло: Шведска</li>
                         <li data-lang-mk="Black" data-lang-sq="Black">Black</li>
                     </ul>
-                    <button class="order-btn" data-product="iPhone 16 Pro Max Black" data-price="198">
+                    <button class="order-btn" data-product="iPhone 16 Pro Max Black" data-price="198" data-image="Images/ib1.jpg">
                         <i class="fas fa-shopping-cart"></i>
                         <span data-lang-mk="Нарачај Сега" data-lang-sq="Porosit Tani">Нарачај Сега</span>
                     </button>
@@ -191,7 +191,7 @@
                         <li data-lang-mk="Потекло: Шведска" data-lang-sq="Origjine: Suedi (Malmo)">Потекло: Шведска</li>
                         <li data-lang-mk="Gray" data-lang-sq="Gray">Gray</li>
                     </ul>
-                    <button class="order-btn" data-product="iPhone 16 Pro Max Gray" data-price="198">
+                    <button class="order-btn" data-product="iPhone 16 Pro Max Gray" data-price="198" data-image="Images/ig1.jpg">
                         <i class="fas fa-shopping-cart"></i>
                         <span data-lang-mk="Нарачај Сега" data-lang-sq="Porosit Tani">Нарачај Сега</span>
                     </button>
@@ -240,7 +240,7 @@
                         <li data-lang-mk="Потекло: Шведска" data-lang-sq="Origjine: Suedi (Malmo)">Потекло: Шведска</li>
                         <li data-lang-mk="Phantom Black" data-lang-sq="Phantom Black">Phantom Black</li>
                     </ul>
-                    <button class="order-btn" data-product="Samsung S25 Ultra 5G" data-price="149">
+                    <button class="order-btn" data-product="Samsung S25 Ultra 5G" data-price="149" data-image="Images/s1.jpg">
                         <i class="fas fa-shopping-cart"></i>
                         <span data-lang-mk="Нарачај Сега" data-lang-sq="Porosit Tani">Нарачај Сега</span>
                     </button>
@@ -289,7 +289,7 @@
                         <li data-lang-mk="Модерен дизајн" data-lang-sq="Pamje moderne dhe dizajn i bukur">Модерен дизајн</li>
                         <li data-lang-mk="Производство од Шведска" data-lang-sq="Prodhim nga Suedia">Производство од Шведска</li>
                     </ul>
-                    <button class="order-btn" data-product="Samsung Galaxy A56 5G" data-price="99">
+                    <button class="order-btn" data-product="Samsung Galaxy A56 5G Black" data-price="99" data-image="Images/s11.jpg">
                         <i class="fas fa-shopping-cart"></i>
                         <span data-lang-mk="Нарачај Сега" data-lang-sq="Porosit Tani">Нарачај Сега</span>
                     </button>
@@ -338,28 +338,7 @@
                         <li data-lang-mk="Производство од Шведска" data-lang-sq="Prodhim nga Suedia">Производство од Шведска</li>
                         <li data-lang-mk="Green" data-lang-sq="Green">Green</li>
                     </ul>
-                    <button class="order-btn" data-product="Samsung Galaxy A56 5G Green" data-price="99">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span data-lang-mk="Нарачај Сега" data-lang-sq="Porosit Tani">Нарачај Сега</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Accessories -->
-            <div class="product-card">
-                <div class="product-images">
-                    <div class="image-gallery">
-                        <a href="Images/logo.png" data-lightbox="accessories" class="main-image">
-                            <img src="Images/logo.png" alt="Accessories" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <h3 data-lang-mk="Аксесоари" data-lang-sq="Aksesorë">Аксесоари</h3>
-                    <div class="product-description">
-                        <p data-lang-mk="Изберете од нашата понуда на квалитетни аксесоари за телефони: маски, полначи, кабли и повеќе!" data-lang-sq="Zgjidhni nga oferta jonë e aksesorëve cilësorë për telefona: mbrojtëse, karikues, kabllo dhe më shumë!">Zgjidhni nga oferta jonë e aksesorëve cilësorë për telefona: mbrojtëse, karikues, kabllo dhe më shumë!</p>
-                    </div>
-                    <button class="order-btn" data-product="Accessories" data-price="-">
+                    <button class="order-btn" data-product="Samsung Galaxy A56 5G Green" data-price="99" data-image="Images/sg1.jpg">
                         <i class="fas fa-shopping-cart"></i>
                         <span data-lang-mk="Нарачај Сега" data-lang-sq="Porosit Tani">Нарачај Сега</span>
                     </button>
@@ -385,7 +364,7 @@
                         <p data-lang-mk="Најнова верзија AirPods, прва копија со одличен квалитет и идентичен изглед како оригиналот!" data-lang-sq="AirPods versioni më i ri, kopje e dorës së parë me cilësi të shkëlqyer dhe pamje identike me origjinalin!">AirPods versioni më i ri, kopje e dorës së parë me cilësi të shkëlqyer dhe pamje identike me origjinalin!</p>
                         <p data-lang-mk="Совршен звук, удобност и долготрајна батерија. Ограничени количини!" data-lang-sq="Tingull i përsosur, rehati dhe bateri që zgjat. Sasi të kufizuara!">Tingull i përsosur, rehati dhe bateri që zgjat. Sasi të kufizuara!</p>
                     </div>
-                    <button class="order-btn" data-product="AirPods First Copy" data-price="50">
+                    <button class="order-btn" data-product="AirPods First Copy" data-price="50" data-image="Images/ai.jpg">
                         <i class="fas fa-shopping-cart"></i>
                         <span data-lang-mk="Нарачај Сега" data-lang-sq="Porosit Tani">Нарачај Сега</span>
                     </button>
@@ -411,7 +390,7 @@
                         <p data-lang-mk="Apple AirPods Max - 2, прва копија со одличен квалитет и идентичен изглед како оригиналот!" data-lang-sq="Apple AirPods Max - 2, kopje e dorës së parë me cilësi të shkëlqyer dhe pamje identike me origjinalin!">Apple AirPods Max - 2, kopje e dorës së parë me cilësi të shkëlqyer dhe pamje identike me origjinalin!</p>
                         <p data-lang-mk="Совршен звук, удобност и долготрајна батерија. Ограничени количини!" data-lang-sq="Tingull i përsosur, rehati dhe bateri që zgjat. Sasi të kufizuara!">Tingull i përsosur, rehati dhe bateri që zgjat. Sasi të kufizuara!</p>
                     </div>
-                    <button class="order-btn" data-product="Apple AirPods Max - 2 First Copy" data-price="50">
+                    <button class="order-btn" data-product="Apple AirPods Max - 2 First Copy" data-price="50" data-image="Images/ai2.jpg">
                         <i class="fas fa-shopping-cart"></i>
                         <span data-lang-mk="Нарачај Сега" data-lang-sq="Porosit Tani">Нарачај Сега</span>
                     </button>
@@ -437,7 +416,7 @@
                         <p data-lang-mk="Најнова верзија паметен часовник, прва копија со одличен квалитет и идентичен изглед како оригиналот!" data-lang-sq="Ora më e re smart, kopje e dorës së parë me cilësi të shkëlqyer dhe pamje identike me origjinalin!">Ora më e re smart, kopje e dorës së parë me cilësi të shkëlqyer dhe pamje identike me origjinalin!</p>
                         <p data-lang-mk="Многу функции, удобност и долготрајна батерија. Ограничени количини!" data-lang-sq="Shumë funksione, rehati dhe bateri që zgjat. Sasi të kufizuara!">Shumë funksione, rehati dhe bateri që zgjat. Sasi të kufizuara!</p>
                     </div>
-                    <button class="order-btn" data-product="Smart Watch First Copy" data-price="50">
+                    <button class="order-btn" data-product="Smart Watch First Copy" data-price="80" data-image="Images/ai3.jpg">
                         <i class="fas fa-shopping-cart"></i>
                         <span data-lang-mk="Нарачај Сега" data-lang-sq="Porosit Tani">Нарачај Сега</span>
                     </button>
@@ -445,50 +424,29 @@
             </div>
         </div>
     </section>
-
-    <!-- Order Modal -->
-    <div id="orderModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 data-lang-mk="Нарачај" data-lang-sq="Porosit">Нарачај</h3>
-                <button class="close-btn">&times;</button>
-            </div>
-            
-            <div class="modal-body">
-                <div class="product-summary">
-                    <img id="modalProductImage" src="" alt="">
-                    <div>
-                        <h4 id="modalProductName"></h4>
-                        <p class="modal-price">€<span id="modalProductPrice"></span></p>
-                    </div>
-                </div>
-                
-                <form id="orderForm" class="order-form">
-                    <div class="form-group">
-                        <label for="name" data-lang-mk="Име" data-lang-sq="Emri">Име</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email" data-lang-mk="Емаил" data-lang-sq="Email">Емаил</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone" data-lang-mk="Телефон" data-lang-sq="Telefoni">Телефон</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i>
-                        <span data-lang-mk="Испрати Нарачка" data-lang-sq="Dërgo Porosinë">Испрати Нарачка</span>
-                    </button>
-                </form>
-            </div>
-        </div>
+<!-- Order Modal -->
+<<form id="orderForm" class="order-form" action="send_email.php" method="POST">
+    <input type="hidden" name="product" id="productInput" value="">
+    <input type="hidden" name="price" id="priceInput" value="">
+    
+    <div class="form-group">
+        <label for="name" ...>Име</label>
+        <input type="text" id="name" name="name" required>
     </div>
+    
+    <div class="form-group">
+        <label for="address" ...>Адреса</label>
+        <input type="text" id="address" name="address" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="phone" ...>Телефон</label>
+        <input type="tel" id="phone" name="phone" required>
+    </div>
+    
+    <button type="submit" ...>Испрати Нарачка</button>
+</form>
 
-   <!-- Footer -->
 <!-- Footer -->
 <footer class="footer">
     <div class="container">

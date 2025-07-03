@@ -130,7 +130,20 @@ function setupEventListeners() {
         btn.addEventListener('click', function() {
             const product = this.dataset.product;
             const price = this.dataset.price;
-            openOrderModal(product, price);
+            // Use data-image if present, otherwise fallback to main-image img
+            let imageSrc = this.dataset.image || '';
+            if (!imageSrc) {
+                const productCard = this.closest('.product-card');
+                if (productCard) {
+                    const mainImage = productCard.querySelector('.main-image img');
+                    if (mainImage && mainImage.getAttribute('src')) {
+                        imageSrc = mainImage.getAttribute('src');
+                    } else {
+                        console.warn('No main image found for product:', product);
+                    }
+                }
+            }
+            openOrderModal(product, price, imageSrc);
         });
     });
     
@@ -220,29 +233,21 @@ function loadLanguagePreference() {
 }
 
 // Modal management
-function openOrderModal(product, price) {
-    // Update modal content
+function openOrderModal(product, price, imageSrc) {
     document.getElementById('modalProductName').textContent = product;
     document.getElementById('modalProductPrice').textContent = price;
-    
-    // Set product image based on product name
     const productImage = document.getElementById('modalProductImage');
-    if (product.includes('iPhone 16')) {
-        productImage.src = 'Images/i1.jpg';
+    if (imageSrc) {
+        productImage.src = imageSrc;
         productImage.alt = product;
-    } else if (product.includes('S25')) {
-        productImage.src = 'Images/samsung-a-1.png';
-        productImage.alt = product;
-    } else if (product.includes('A56')) {
-        productImage.src = 'Images/samsung-b-1.png';
-        productImage.alt = product;
+        productImage.style.display = '';
+    } else {
+        productImage.src = '';
+        productImage.alt = '';
+        productImage.style.display = 'none';
     }
-    
-    // Show modal
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
-    
-    // Focus on first input
     setTimeout(() => {
         document.getElementById('name').focus();
     }, 300);
@@ -260,7 +265,7 @@ async function handleOrderSubmission(e) {
     
     const formData = new FormData(orderForm);
     const name = formData.get('name').trim();
-    const email = formData.get('email').trim();
+    const address = formData.get('address').trim();
     const phone = formData.get('phone').trim();
     const product = document.getElementById('modalProductName').textContent;
     const price = document.getElementById('modalProductPrice').textContent;
@@ -290,14 +295,15 @@ async function handleOrderSubmission(e) {
     
     try {
         // Prepare email data
-        const emailData = {
-            name: name,
-            email: email,
-            phone: phone,
-            product: product,
-            price: price,
-            language: currentLang
-        };
+      const emailData = {
+    name: name,
+    address: address,
+    phone: phone,
+    product: product,
+    price: price,
+    language: currentLang
+};
+
         
         // Send email using selected method
         const response = await sendEmail(emailData);
@@ -329,7 +335,8 @@ async function sendEmail(data) {
     // Option 1: FormSubmit (Free, no setup required)
     // Option 2: PHP (requires server with PHP)
     
-    const useFormSubmit = true; // Set to false to use PHP
+   const useFormSubmit = false; // Use PHP backend
+ // Set to false to use PHP
     
     if (useFormSubmit) {
         // Using FormSubmit service (free, no API key needed)
@@ -365,15 +372,13 @@ async function sendEmail(data) {
             body: formData
         });
     } else {
-        // Using PHP
-        return fetch('send_email.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        });
-    }
+    // Using PHP
+    return fetch('send_email.php', {
+        method: 'POST',
+        body: new URLSearchParams(data)
+    });
+}
+
 }
 
 // Utility functions

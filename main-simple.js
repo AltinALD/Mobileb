@@ -146,7 +146,7 @@ function setupImageLightbox() {
     lightbox.addEventListener('click', function(e) {
         if (e.target === lightbox || e.target === closeLightbox) {
             lightbox.style.display = 'none';
-            document.body.style.overflow = 'auto';
+            documhandleOrderSubmissionnt.body.style.overflow = 'auto';
         }
     });
     
@@ -191,19 +191,20 @@ function applyLanguage(lang) {
 
 function updateFormPlaceholders(lang) {
     const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
+    const addressInput = document.getElementById('address'); // ✅ was 'email'
     const phoneInput = document.getElementById('phone');
-    
+
     if (lang === 'mk') {
         nameInput.placeholder = 'Внесете го вашето име';
-        emailInput.placeholder = 'vash@email.com';
+        addressInput.placeholder = 'Скопје'; // ✅ Use address
         phoneInput.placeholder = '+389 70 123 456';
     } else {
         nameInput.placeholder = 'Shkruani emrin tuaj';
-        emailInput.placeholder = 'juaj@email.com';
+        addressInput.placeholder = 'Shkup 1000';
         phoneInput.placeholder = '+389 70 123 456';
     }
 }
+
 
 function saveLanguagePreference(lang) {
     localStorage.setItem('preferredLanguage', lang);
@@ -216,7 +217,6 @@ function loadLanguagePreference() {
     }
 }
 
-// Modal management
 function openOrderModal(product, price) {
     console.log('Opening modal for:', product, price);
     
@@ -224,36 +224,54 @@ function openOrderModal(product, price) {
         console.error('Modal element not found!');
         return;
     }
-    
+
     // Update modal content
     const productNameElement = document.getElementById('modalProductName');
     const productPriceElement = document.getElementById('modalProductPrice');
     const productImageElement = document.getElementById('modalProductImage');
-    
+
     if (productNameElement) productNameElement.textContent = product;
     if (productPriceElement) productPriceElement.textContent = price;
-    
-    // Set product image based on product name
+
+    // ✅ Inject hidden input values for sending
+    document.getElementById('productInput').value = product;
+    document.getElementById('priceInput').value = price;
+
+    // ✅ Your existing image logic below this — KEEP IT UNCHANGED:
     if (productImageElement) {
         if (product.includes('iPhone 16')) {
             productImageElement.src = 'Images/i1.jpg';
             productImageElement.alt = product;
-        } else if (product.includes('S25')) {
-            productImageElement.src = 'Images/samsung-a-1.png';
+        } else if (product.includes('16 Pro Max Black')) {
+            productImageElement.src = 'Images/ib.jpg';
             productImageElement.alt = product;
-        } else if (product.includes('A56')) {
-            productImageElement.src = 'Images/samsung-b-1.png';
+        } else if (product.includes('iPhone 16 Pro Max Desert')) {
+            productImageElement.src = 'Images/ig1.jpg';
+            productImageElement.alt = product;
+        } else if (product.includes('S25')) {
+            productImageElement.src = 'Images/s1.';
+            productImageElement.alt = product;
+        } else if (product.includes('A56 5G Black')) {
+            productImageElement.src = 'Images/s11.jpg';
+            productImageElement.alt = product;
+        } else if (product.includes('A56 5G Green')) {
+            productImageElement.src = 'Images/sg1.jpg';
+            productImageElement.alt = product;
+        } else if (product.includes('AirPods (First Copy)')) {
+            productImageElement.src = 'Images/ai.jpg';
+            productImageElement.alt = product;
+        } else if (product.includes('AirPods Max')) {
+            productImageElement.src = 'Images/ai2.jpg';
+            productImageElement.alt = product;
+        } else if (product.includes('Smart Watch')) {
+            productImageElement.src = 'Images/ai3.jpg';
             productImageElement.alt = product;
         }
     }
-    
-    // Show modal
+
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
-    
-    console.log('Modal should be visible now');
-    
-    // Focus on first input
+
     setTimeout(() => {
         const nameInput = document.getElementById('name');
         if (nameInput) nameInput.focus();
@@ -278,13 +296,14 @@ async function handleOrderSubmission(e) {
     const name = formData.get('name').trim();
     const email = formData.get('email').trim();
     const phone = formData.get('phone').trim();
+    const address = formData.get('address') ? formData.get('address').trim() : ''; // Make sure address input exists
     const product = document.getElementById('modalProductName').textContent;
     const price = document.getElementById('modalProductPrice').textContent;
     
-    console.log('Form data:', { name, email, phone, product, price });
+    console.log('Form data:', { name, email, phone, address, product, price });
     
     // Validation
-    if (!name || !email || !phone) {
+    if (!name || !email || !phone || !address) {
         alert(currentLang === 'mk' ? 'Пополнете ги сите полиња.' : 'Ju lutemi plotësoni të gjitha fushat.');
         return;
     }
@@ -294,10 +313,37 @@ async function handleOrderSubmission(e) {
         return;
     }
     
-    // Simple success message
-    alert(currentLang === 'mk' ? 'Нарачката е успешно испратена!' : 'Porosia u dërgua me sukses!');
-    closeOrderModal();
+    // Prepare data for POST
+    const data = new URLSearchParams();
+    data.append('name', name);
+    data.append('email', email);
+    data.append('phone', phone);
+    data.append('address', address);
+    data.append('product', product);
+    data.append('price', price);
+    data.append('language', currentLang);
+    
+    try {
+        const response = await fetch('send_email.php', {
+            method: 'POST',
+            body: data
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+            alert(result.message);
+            closeOrderModal();
+            orderForm.reset();
+        } else {
+            alert(result.error || (currentLang === 'mk' ? 'Грешка при испраќање на нарачката.' : 'Gabim gjatë dërgimit të porosisë.'));
+        }
+    } catch (error) {
+        console.error('Error sending email:', error);
+        alert(currentLang === 'mk' ? 'Грешка при испраќање на нарачката.' : 'Gabim gjatë dërgimit të porosisë.');
+    }
 }
+
 
 // Utility functions
 function isValidEmail(email) {
